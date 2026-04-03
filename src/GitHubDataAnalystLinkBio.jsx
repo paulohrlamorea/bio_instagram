@@ -54,7 +54,12 @@ function DefaultCard({ card }) {
     }
 
     event.preventDefault();
-    window.location.assign(card.href);
+
+    const openedWindow = window.open(card.href, "_blank", "noopener,noreferrer");
+
+    if (!openedWindow) {
+      window.location.href = card.href;
+    }
   }
 
   return (
