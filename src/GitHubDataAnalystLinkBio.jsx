@@ -36,15 +36,34 @@ const cards = [
   },
 ];
 
+function shouldUseDirectNavigation() {
+  if (typeof window === "undefined") {
+    return false;
+  }
+
+  return window.matchMedia("(pointer: coarse)").matches || navigator.maxTouchPoints > 0;
+}
+
 function DefaultCard({ card }) {
   const Icon = card.icon;
+  const isExternal = card.href.startsWith("http");
+
+  function handleClick(event) {
+    if (!isExternal || !shouldUseDirectNavigation()) {
+      return;
+    }
+
+    event.preventDefault();
+    window.location.assign(card.href);
+  }
 
   return (
     <a
       href={card.href}
-      target={card.href.startsWith("http") ? "_blank" : undefined}
-      rel={card.href.startsWith("http") ? "noreferrer" : undefined}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noreferrer" : undefined}
       className="bio-card bio-card-default"
+      onClick={handleClick}
     >
       <div className="bio-card-overlay" />
 
