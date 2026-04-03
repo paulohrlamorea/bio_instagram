@@ -115,8 +115,8 @@ export default function GitHubDataAnalystLinkBio() {
               <h1 className="bio-heading">Bem-vindo ao meu espaço profissional</h1>
 
               <p className="bio-description">
-                Aqui você encontra meu posicionamento, meus projetos e uma ideia que ainda
-                está sendo forjada no silêncio.
+                Aqui você encontra meu posicionamento, meus projetos e a visão que estou
+                transformando em construção real.
               </p>
             </div>
 
