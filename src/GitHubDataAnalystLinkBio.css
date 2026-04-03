@@ -551,14 +551,14 @@
   }
 
   .bio-card-title {
-    font-size: 1.16rem;
-    line-height: 1.15;
+    font-size: 1.28rem;
+    line-height: 1.18;
   }
 
   .bio-card-subtitle {
     margin-top: 0.5rem;
-    font-size: 0.82rem;
-    line-height: 1.55;
+    font-size: 0.92rem;
+    line-height: 1.65;
   }
 
   .bio-card-icon {
@@ -571,7 +571,7 @@
     width: 100%;
     justify-content: center;
     padding: 0.72rem 0.9rem;
-    font-size: 0.84rem;
+    font-size: 0.88rem;
   }
 
   .bio-card-image-linkedin img {
