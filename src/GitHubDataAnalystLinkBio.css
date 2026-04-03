@@ -11,7 +11,7 @@
 
 .bio-page {
   min-height: 100vh;
-  padding: 2.5rem 1rem;
+  padding: clamp(1rem, 3vw, 2.5rem) 1rem;
   color: var(--bio-text);
   background:
     radial-gradient(circle at top, rgba(229, 9, 20, 0.24), transparent 24%),
@@ -20,16 +20,16 @@
 }
 
 .bio-container {
-  width: min(100%, 28rem);
+  width: min(100%, 34rem);
   margin: 0 auto;
 }
 
 .bio-shell {
   position: relative;
   overflow: hidden;
-  padding: 1.5rem;
+  padding: clamp(1rem, 2vw, 1.75rem);
   border: 1px solid rgba(245, 245, 241, 0.09);
-  border-radius: 2rem;
+  border-radius: clamp(1.4rem, 3vw, 2rem);
   background:
     linear-gradient(180deg, rgba(245, 245, 241, 0.035), rgba(245, 245, 241, 0.015)),
     linear-gradient(180deg, rgba(10, 10, 12, 0.94), rgba(6, 6, 8, 0.98));
@@ -114,7 +114,7 @@
 
 .bio-heading {
   margin-top: 1rem;
-  font-size: 2rem;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
   font-weight: 900;
   line-height: 1.1;
   letter-spacing: -0.03em;
@@ -143,12 +143,6 @@
   color: var(--bio-text);
   text-decoration: none;
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.bio-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(229, 9, 20, 0.24);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
 }
 
 .bio-card-default {
@@ -243,7 +237,7 @@
 }
 
 .bio-card-title {
-  max-width: 60%;
+  max-width: 58%;
   margin: 0;
   font-size: 1.5rem;
   font-weight: 900;
@@ -253,7 +247,7 @@
 }
 
 .bio-card-subtitle {
-  max-width: 60%;
+  max-width: 58%;
   margin-top: 0.75rem;
   color: rgba(245, 245, 241, 0.82);
   font-size: 0.94rem;
@@ -276,10 +270,6 @@
   font-size: 0.9rem;
   font-weight: 700;
   transition: transform 0.3s ease;
-}
-
-.bio-card:hover .bio-card-cta {
-  transform: translateX(4px);
 }
 
 .bio-card-mechanic {
@@ -398,17 +388,13 @@
     padding: 2.5rem 1.5rem;
   }
 
-  .bio-shell {
-    padding: 1.75rem;
+  .bio-grid {
+    gap: 1.1rem;
   }
 
   .bio-avatar {
     width: 8rem;
     height: 8rem;
-  }
-
-  .bio-heading {
-    font-size: 2.4rem;
   }
 }
 
@@ -513,20 +499,102 @@
   }
 }
 
+@media (max-width: 480px) {
+  .bio-page {
+    padding-inline: 0.75rem;
+  }
+
+  .bio-avatar {
+    width: 5.75rem;
+    height: 5.75rem;
+  }
+
+  .bio-badge {
+    letter-spacing: 0.16em;
+  }
+
+  .bio-description {
+    max-width: none;
+  }
+
+  .bio-card-default {
+    min-height: 0;
+  }
+
+  .bio-card-image {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    height: 9.5rem;
+    border-radius: 1.2rem 1.2rem 0.9rem 0.9rem;
+  }
+
+  .bio-card-overlay {
+    background: linear-gradient(180deg, rgba(3, 3, 4, 0.22) 0%, rgba(4, 4, 6, 0.88) 72%);
+  }
+
+  .bio-card-content {
+    gap: 1rem;
+    padding-top: 0.85rem;
+  }
+
+  .bio-card-title,
+  .bio-card-subtitle {
+    max-width: 100%;
+  }
+
+  .bio-card-title {
+    font-size: 1.08rem;
+  }
+
+  .bio-card-subtitle {
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+
+  .bio-card-cta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .bio-card-mechanic-icon {
+    width: 4.25rem;
+    height: 4.25rem;
+  }
+
+  .bio-card-mechanic-title {
+    font-size: 1.18rem;
+  }
+}
+
 @media (min-width: 1024px) {
   .bio-page {
     padding: 3rem 1.5rem;
   }
 
   .bio-container {
-    width: min(100%, 30rem);
+    width: min(100%, 36rem);
   }
 
-  .bio-shell {
-    padding: 1.9rem;
+  .bio-grid {
+    gap: 1.15rem;
   }
 
   .bio-card-default {
     min-height: 11.75rem;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .bio-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(229, 9, 20, 0.24);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
+  }
+
+  .bio-card:hover .bio-card-cta {
+    transform: translateX(4px);
   }
 }
